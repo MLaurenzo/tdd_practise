@@ -4,10 +4,17 @@ import org.junit.Test;
 public class FakeIt {
 
     private static String fizzbuzz(int i) {
-        // TODO remove duplication
-        if (i % 3 == 0) return "fizz";
-        if (i % 5 == 0) return "buzz";
+        // the following line of code has been adding with the "fake it" method.
+        // TODO refactor it to remove the duplication with the rest of the method.
+        if (isMultipleOf(i, 15)) return "fizzbuzz";
+
+        if (isMultipleOf(i, 3)) return "fizz";
+        if (isMultipleOf(i, 5)) return "buzz";
         return String.valueOf(i);
+    }
+
+    private static boolean isMultipleOf(int i, int multiple) {
+        return i % multiple == 0;
     }
 
     @Test
@@ -21,8 +28,7 @@ public class FakeIt {
         fizzbuzz_should_return(5, "buzz");
         fizzbuzz_should_return(10, "buzz");
 
-        // TODO implement this test with "fake it" method
-        // fizzbuzz_should_return(15, "fizzbuzz");
+        fizzbuzz_should_return(15, "fizzbuzz");
     }
 
     private void fizzbuzz_should_return(int input, String expected) {
