@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-public class FizzBuzz {
+public class FakeIt {
 
     private static String fizzbuzz(int i) {
         // TODO remove duplication
